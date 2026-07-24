@@ -2,7 +2,6 @@ from aiortc.mediastreams import VideoStreamTrack
 from av.video.frame import VideoFrame
 from utils import Tracker
 import asyncio
-from deepface import DeepFace
 
 
 class VideoTransformTrack(VideoStreamTrack):
