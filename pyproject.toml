@@ -8,6 +8,7 @@ dependencies = [
     "aiortc>=1.15.0",
     "fastapi[standard]>=0.139.2",
     "lap>=0.5.13",
+    "pydantic-settings>=2.14.2",
     "ultralytics>=8.4.104",
     "uvicorn>=0.51.0",
 ]

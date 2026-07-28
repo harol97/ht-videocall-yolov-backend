@@ -3,14 +3,15 @@ from uuid import uuid4
 
 from aiortc import RTCPeerConnection, RTCSessionDescription
 from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from torch.cuda import is_available
 
 from http_requests import OfferBody
 import http_responses
+from settings import get_settings
 from transform import VideoTransformTrack
 
 @asynccontextmanager
@@ -20,12 +21,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 app.mount("/static", StaticFiles(directory="templates"), name="static")
-origins = [
-    "http://localhost.tiangolo.com",
-    "https://localhost.tiangolo.com",
-    "http://localhost",
-    "http://localhost:5173",
-]
+origins = get_settings().cors_origins
 
 app.add_middleware(
     CORSMiddleware,

@@ -677,6 +677,7 @@ dependencies = [
     { name = "aiortc" },
     { name = "fastapi", extra = ["standard"] },
     { name = "lap" },
+    { name = "pydantic-settings" },
     { name = "ultralytics" },
     { name = "uvicorn" },
 ]
@@ -691,6 +692,7 @@ requires-dist = [
     { name = "aiortc", specifier = ">=1.15.0" },
     { name = "fastapi", extras = ["standard"], specifier = ">=0.139.2" },
     { name = "lap", specifier = ">=0.5.13" },
+    { name = "pydantic-settings", specifier = ">=2.14.2" },
     { name = "ultralytics", specifier = ">=8.4.104" },
     { name = "uvicorn", specifier = ">=0.51.0" },
 ]
